@@ -45,6 +45,7 @@ export function Navbar() {
   }, [location.pathname]);
 
   const navLinks = [
+    { name: t('nav.home'), path: "/" },
     { name: t('nav.work'), path: "/projects" },
     { name: t('nav.gallery'), path: "/gallery" },
     { name: t('nav.about'), path: "/about" },

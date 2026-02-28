@@ -5,6 +5,7 @@ const resources = {
   en: {
     translation: {
       "nav": {
+        "home": "Home",
         "work": "Work",
         "gallery": "Gallery",
         "about": "About",
@@ -54,6 +55,7 @@ const resources = {
   es: {
     translation: {
       "nav": {
+        "home": "Inicio",
         "work": "Trabajo",
         "gallery": "Galería",
         "about": "Sobre mí",
