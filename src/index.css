@@ -1,44 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
-  /* Dark mode by default */
-  --bg-color: #141414;
-  --surface-color: #1E1E1E;
-  --text-color: #F7F7F5;
-  --muted-color: #A1A1AA;
-  --border-color: #333333;
-  --accent-color: #2F6BFF;
-  --success-color: #1FAD66;
-  --warning-color: #F2B705;
-  --error-color: #E5484D;
+  /* Typography */
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  /* Radius + shadow */
+  --radius: 18px;
+  --shadow: 0 12px 40px rgba(0,0,0,0.45);
+
+  /* Dark theme (Default) */
+  --bg: #0E0F12;
+  --bg-elev: #14161B;
+  --text: #F5F3F7;
+  --text-muted: rgba(245,243,247,0.70);
+  --border: rgba(245,243,247,0.12);
+
+  /* Accents tuned for dark */
+  --accent: #FF5F7B;
+  --accent-2: #22D6CB;
+  --accent-3: #9B84FF;
+  --highlight: #FFD86B;
+
+  --focus: 0 0 0 3px rgba(155,132,255,0.35);
+
+  --wash: radial-gradient(900px circle at 10% 10%, rgba(255,95,123,0.18), transparent 45%),
+          radial-gradient(900px circle at 90% 20%, rgba(34,214,203,0.16), transparent 48%),
+          radial-gradient(900px circle at 60% 90%, rgba(155,132,255,0.14), transparent 50%);
 }
 
 .light {
-  /* Light mode overrides */
-  --bg-color: #F7F7F5;
-  --surface-color: #FFFFFF;
-  --text-color: #141414;
-  --muted-color: #5E5E5E;
-  --border-color: #E6E6E6;
+  /* Light theme */
+  --bg: #FAFAF7;
+  --bg-elev: #FFFFFF;
+  --text: #141316;
+  --text-muted: rgba(20,19,22,0.68);
+  --border: rgba(20,19,22,0.10);
+  --shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+  /* Accents */
+  --accent: #FF4D6D;     /* Electric Coral */
+  --accent-2: #16C1B7;   /* Bay Teal */
+  --accent-3: #7C5CFF;   /* Studio Violet */
+  --highlight: #FFD23F;  /* Citrus */
+
+  /* Links + focus */
+  --link: var(--accent-3);
+  --focus: 0 0 0 3px rgba(124,92,255,0.35);
+
+  /* Subtle color wash */
+  --wash: radial-gradient(900px circle at 10% 10%, rgba(255,77,109,0.14), transparent 45%),
+          radial-gradient(900px circle at 90% 20%, rgba(22,193,183,0.14), transparent 48%),
+          radial-gradient(900px circle at 60% 90%, rgba(124,92,255,0.12), transparent 50%);
 }
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
 
-  --color-bg: var(--bg-color);
-  --color-surface: var(--surface-color);
-  --color-text: var(--text-color);
-  --color-muted: var(--muted-color);
-  --color-border: var(--border-color);
-  --color-accent: var(--accent-color);
+  --color-bg: var(--bg);
+  --color-surface: var(--bg-elev);
+  --color-text: var(--text);
+  --color-muted: var(--text-muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-3: var(--accent-3);
+  --color-highlight: var(--highlight);
 
-  --color-success: var(--success-color);
-  --color-warning: var(--warning-color);
-  --color-error: var(--error-color);
-
-  --radius-card: 16px;
+  --radius-card: var(--radius);
   --radius-pill: 999px;
 }
 
@@ -47,8 +77,13 @@
     @apply bg-bg text-text font-sans antialiased selection:bg-accent/20 selection:text-accent;
   }
   
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5, h6, .display {
     @apply font-display tracking-tight;
+  }
+  
+  h1 {
+    letter-spacing: -0.02em;
+    line-height: 0.95;
   }
 }
 
@@ -64,5 +99,47 @@
 
   .section-spacing {
     @apply py-14 sm:py-18 lg:py-24;
+  }
+
+  .hero-wash {
+    background-image: var(--wash);
+  }
+
+  .noise-overlay {
+    position: relative;
+  }
+  .noise-overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  .button-primary {
+    @apply rounded-[var(--radius)] border-none text-white px-5 py-3 transition-all duration-200 ease-[cubic-bezier(0.2,0.8,0.2,1)];
+    background: linear-gradient(135deg, var(--accent), var(--accent-3));
+    box-shadow: var(--shadow);
+  }
+  .button-primary:hover {
+    transform: translateY(-2px);
+  }
+  .button-primary:focus {
+    outline: none;
+    box-shadow: var(--shadow), var(--focus);
+  }
+
+  .button-secondary {
+    @apply rounded-[var(--radius)] border border-border bg-surface px-5 py-3 transition-all duration-200 ease-[cubic-bezier(0.2,0.8,0.2,1)];
+    box-shadow: var(--shadow);
+  }
+  .button-secondary:hover {
+    transform: translateY(-2px);
+  }
+  .button-secondary:focus {
+    outline: none;
+    box-shadow: var(--shadow), var(--focus);
   }
 }

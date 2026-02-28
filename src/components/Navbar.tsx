@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, Sun, Moon, Globe } from "lucide-react";
+import { Menu, X, Sun, Moon, Globe, Linkedin } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isLightMode, setIsLightMode] = useState(false);
+  const [accentColor, setAccentColor] = useState('var(--accent)');
   const location = useLocation();
   const { t, i18n } = useTranslation();
 
@@ -42,44 +43,61 @@ export function Navbar() {
 
   useEffect(() => {
     setMobileMenuOpen(false);
+    const accents = ['var(--accent)', 'var(--accent-2)', 'var(--accent-3)', 'var(--highlight)'];
+    setAccentColor(accents[Math.floor(Math.random() * accents.length)]);
   }, [location.pathname]);
 
   const navLinks = [
     { name: t('nav.home'), path: "/" },
-    { name: t('nav.work'), path: "/projects" },
     { name: t('nav.gallery'), path: "/gallery" },
-    { name: t('nav.about'), path: "/about" },
-    { name: t('nav.resume'), path: "/resume" },
-    { name: t('nav.contact'), path: "/contact" },
+    { name: t('nav.bio'), path: "/bio" },
+    { name: t('nav.contact'), path: "mailto:message@milliedesigner.com", isExternal: true },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-        scrolled ? "bg-bg/80 backdrop-blur-md border-b border-border/50" : "bg-transparent"
+        scrolled ? "bg-bg/80 backdrop-blur-md border-b border-border" : "bg-transparent"
       }`}
     >
       <div className="container-custom h-20 flex items-center justify-between">
-        <Link to="/" className="font-display font-semibold text-lg tracking-tight z-50">
+        <Link to="/" className="font-display font-semibold text-lg tracking-tight z-50 flex items-center gap-2">
           Millie Designs
+          <span 
+            className="w-2 h-2 rounded-full inline-block" 
+            style={{ backgroundColor: accentColor, transition: 'background-color 0.3s ease' }}
+          />
         </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           <nav className="flex items-center gap-8">
             {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.path}
-                className={`text-sm font-medium transition-colors hover:text-text ${
-                  location.pathname.startsWith(link.path) ? "text-text" : "text-muted"
-                }`}
-              >
-                {link.name}
-              </Link>
+              link.isExternal ? (
+                <a
+                  key={link.name}
+                  href={link.path}
+                  className="text-sm font-medium transition-colors hover:text-text text-muted"
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className={`text-sm font-medium transition-colors hover:text-text ${
+                    location.pathname.startsWith(link.path) && link.path !== "/" || (link.path === "/" && location.pathname === "/") ? "text-text" : "text-muted"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              )
             ))}
           </nav>
           <div className="flex items-center gap-4 border-l border-border/50 pl-6">
+            <a href="https://www.linkedin.com/in/mildred-c-huggins" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-text transition-colors" aria-label="LinkedIn">
+              <Linkedin size={18} />
+            </a>
             <button onClick={toggleLanguage} className="text-muted hover:text-text transition-colors flex items-center gap-1 text-sm font-medium" aria-label="Toggle language">
               <Globe size={18} />
               <span className="uppercase">{i18n.language}</span>
@@ -92,6 +110,9 @@ export function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <div className="md:hidden flex items-center gap-4 z-50">
+          <a href="https://www.linkedin.com/in/mildred-c-huggins" target="_blank" rel="noopener noreferrer" className="text-text focus:outline-none">
+            <Linkedin size={20} />
+          </a>
           <button onClick={toggleLanguage} className="text-text focus:outline-none flex items-center gap-1 text-sm font-medium uppercase">
             <Globe size={18} />
             {i18n.language}
@@ -119,15 +140,27 @@ export function Navbar() {
               className="absolute top-0 left-0 right-0 h-screen bg-bg flex flex-col items-center justify-center gap-8 z-40 md:hidden"
             >
               {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  className={`text-2xl font-display font-medium transition-colors ${
-                    location.pathname.startsWith(link.path) ? "text-text" : "text-muted"
-                  }`}
-                >
-                  {link.name}
-                </Link>
+                link.isExternal ? (
+                  <a
+                    key={link.name}
+                    href={link.path}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-2xl font-display font-medium transition-colors text-muted hover:text-text"
+                  >
+                    {link.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.name}
+                    to={link.path}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`text-2xl font-display font-medium transition-colors ${
+                      location.pathname.startsWith(link.path) && link.path !== "/" || (link.path === "/" && location.pathname === "/") ? "text-text" : "text-muted"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
             </motion.div>
           )}

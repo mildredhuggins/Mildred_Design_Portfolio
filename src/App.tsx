@@ -6,11 +6,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import { Home } from "./pages/Home";
-import { Projects } from "./pages/Projects";
-import { ProjectDetail } from "./pages/ProjectDetail";
 import { Gallery } from "./pages/Gallery";
-import { About } from "./pages/About";
-import { Resume } from "./pages/Resume";
+import { Bio } from "./pages/Bio";
 import { Contact } from "./pages/Contact";
 
 export default function App() {
@@ -19,11 +16,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="projects" element={<Projects />} />
-          <Route path="projects/:id" element={<ProjectDetail />} />
           <Route path="gallery" element={<Gallery />} />
-          <Route path="about" element={<About />} />
-          <Route path="resume" element={<Resume />} />
+          <Route path="bio" element={<Bio />} />
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>
