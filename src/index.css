@@ -1,20 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
+:root {
+  /* Dark mode by default */
+  --bg-color: #141414;
+  --surface-color: #1E1E1E;
+  --text-color: #F7F7F5;
+  --muted-color: #A1A1AA;
+  --border-color: #333333;
+  --accent-color: #2F6BFF;
+  --success-color: #1FAD66;
+  --warning-color: #F2B705;
+  --error-color: #E5484D;
+}
+
+.light {
+  /* Light mode overrides */
+  --bg-color: #F7F7F5;
+  --surface-color: #FFFFFF;
+  --text-color: #141414;
+  --muted-color: #5E5E5E;
+  --border-color: #E6E6E6;
+}
+
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
 
-  --color-bg: #F7F7F5;
-  --color-surface: #FFFFFF;
-  --color-text: #141414;
-  --color-muted: #5E5E5E;
-  --color-border: #E6E6E6;
-  --color-accent: #2F6BFF;
+  --color-bg: var(--bg-color);
+  --color-surface: var(--surface-color);
+  --color-text: var(--text-color);
+  --color-muted: var(--muted-color);
+  --color-border: var(--border-color);
+  --color-accent: var(--accent-color);
 
-  --color-success: #1FAD66;
-  --color-warning: #F2B705;
-  --color-error: #E5484D;
+  --color-success: var(--success-color);
+  --color-warning: var(--warning-color);
+  --color-error: var(--error-color);
 
   --radius-card: 16px;
   --radius-pill: 999px;

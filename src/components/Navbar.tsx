@@ -1,12 +1,36 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon, Globe } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isLightMode, setIsLightMode] = useState(false);
   const location = useLocation();
+  const { t, i18n } = useTranslation();
+
+  useEffect(() => {
+    // Check initial theme
+    const isLight = document.documentElement.classList.contains('light');
+    setIsLightMode(isLight);
+  }, []);
+
+  const toggleTheme = () => {
+    if (isLightMode) {
+      document.documentElement.classList.remove('light');
+      setIsLightMode(false);
+    } else {
+      document.documentElement.classList.add('light');
+      setIsLightMode(true);
+    }
+  };
+
+  const toggleLanguage = () => {
+    const newLang = i18n.language === 'en' ? 'es' : 'en';
+    i18n.changeLanguage(newLang);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,11 +45,11 @@ export function Navbar() {
   }, [location.pathname]);
 
   const navLinks = [
-    { name: "Work", path: "/projects" },
-    { name: "Gallery", path: "/gallery" },
-    { name: "About", path: "/about" },
-    { name: "Resume", path: "/resume" },
-    { name: "Contact", path: "/contact" },
+    { name: t('nav.work'), path: "/projects" },
+    { name: t('nav.gallery'), path: "/gallery" },
+    { name: t('nav.about'), path: "/about" },
+    { name: t('nav.resume'), path: "/resume" },
+    { name: t('nav.contact'), path: "/contact" },
   ];
 
   return (
@@ -40,28 +64,48 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              className={`text-sm font-medium transition-colors hover:text-text ${
-                location.pathname.startsWith(link.path) ? "text-text" : "text-muted"
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </nav>
+        <div className="hidden md:flex items-center gap-8">
+          <nav className="flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.path}
+                className={`text-sm font-medium transition-colors hover:text-text ${
+                  location.pathname.startsWith(link.path) ? "text-text" : "text-muted"
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
+          <div className="flex items-center gap-4 border-l border-border/50 pl-6">
+            <button onClick={toggleLanguage} className="text-muted hover:text-text transition-colors flex items-center gap-1 text-sm font-medium" aria-label="Toggle language">
+              <Globe size={18} />
+              <span className="uppercase">{i18n.language}</span>
+            </button>
+            <button onClick={toggleTheme} className="text-muted hover:text-text transition-colors" aria-label="Toggle theme">
+              {isLightMode ? <Moon size={18} /> : <Sun size={18} />}
+            </button>
+          </div>
+        </div>
 
         {/* Mobile Menu Toggle */}
-        <button
-          className="md:hidden z-50 p-2 -mr-2 text-text focus:outline-none"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="md:hidden flex items-center gap-4 z-50">
+          <button onClick={toggleLanguage} className="text-text focus:outline-none flex items-center gap-1 text-sm font-medium uppercase">
+            <Globe size={18} />
+            {i18n.language}
+          </button>
+          <button onClick={toggleTheme} className="text-text focus:outline-none">
+            {isLightMode ? <Moon size={20} /> : <Sun size={20} />}
+          </button>
+          <button
+            className="p-2 -mr-2 text-text focus:outline-none"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
 
         {/* Mobile Nav */}
         <AnimatePresence>
