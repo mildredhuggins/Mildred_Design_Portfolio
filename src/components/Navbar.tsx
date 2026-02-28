@@ -35,7 +35,7 @@ export function Navbar() {
     >
       <div className="container-custom h-20 flex items-center justify-between">
         <Link to="/" className="font-display font-semibold text-lg tracking-tight z-50">
-          Quiet Confidence
+          Millie Designs
         </Link>
 
         {/* Desktop Nav */}

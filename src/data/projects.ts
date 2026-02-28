@@ -31,8 +31,8 @@ export const projects: Project[] = [
     year: "2023",
     tools: ["Figma", "Framer", "React"],
     tags: ["UX/UI", "Fintech", "Dashboard"],
-    heroImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2000",
-    thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+    heroImage: "https://uimu1t8pgavlwwu9.public.blob.vercel-storage.com/ChatGPT%20Image%20Jan%201%2C%202026%2C%2010_30_51%20PM.png",
+    thumbnail: "https://uimu1t8pgavlwwu9.public.blob.vercel-storage.com/ChatGPT%20Image%20Jan%201%2C%202026%2C%2010_30_51%20PM.png",
     outcome: "Redesigned the core dashboard, increasing daily active users by 34%.",
     problem: "Aura's existing dashboard was cluttered with data, making it difficult for users to understand their financial health at a glance. The cognitive load was too high, leading to user drop-off.",
     constraints: [
@@ -79,8 +79,8 @@ export const projects: Project[] = [
     year: "2024",
     tools: ["Figma", "Webflow"],
     tags: ["E-commerce", "Branding", "Web"],
-    heroImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000",
-    thumbnail: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800",
+    heroImage: "https://uimu1t8pgavlwwu9.public.blob.vercel-storage.com/ChatGPT%20Image%20Jan%201%2C%202026%2C%2010_35_43%20PM.png",
+    thumbnail: "https://uimu1t8pgavlwwu9.public.blob.vercel-storage.com/ChatGPT%20Image%20Jan%201%2C%202026%2C%2010_35_43%20PM.png",
     outcome: "Created a seamless shopping experience for sustainable home goods.",
     problem: "Lumina Eco needed a digital storefront that reflected their premium, sustainable brand identity while maintaining high conversion rates.",
     constraints: [
@@ -119,8 +119,8 @@ export const projects: Project[] = [
     year: "2023",
     tools: ["Figma", "Principle"],
     tags: ["Mobile", "Health", "Motion"],
-    heroImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=2000",
-    thumbnail: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800",
+    heroImage: "https://uimu1t8pgavlwwu9.public.blob.vercel-storage.com/ChatGPT%20Image%20Jan%201%2C%202026%2C%2010_52_18%20PM.png",
+    thumbnail: "https://uimu1t8pgavlwwu9.public.blob.vercel-storage.com/ChatGPT%20Image%20Jan%201%2C%202026%2C%2010_52_18%20PM.png",
     outcome: "Designed an intuitive habit tracker that feels like a companion.",
     problem: "Most health trackers feel clinical and punishing. Vitals needed to feel encouraging and personal.",
     constraints: [
@@ -157,8 +157,8 @@ export const projects: Project[] = [
     year: "2022",
     tools: ["Figma", "Storybook"],
     tags: ["Design Systems", "Documentation"],
-    heroImage: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=2000",
-    thumbnail: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=800",
+    heroImage: "https://uimu1t8pgavlwwu9.public.blob.vercel-storage.com/ChatGPT%20Image%20Jan%201%2C%202026%2C%2010_57_16%20PM.png",
+    thumbnail: "https://uimu1t8pgavlwwu9.public.blob.vercel-storage.com/ChatGPT%20Image%20Jan%201%2C%202026%2C%2010_57_16%20PM.png",
     outcome: "Built a comprehensive design system serving 5 product teams.",
     problem: "Inconsistent UI across products was slowing down development and confusing users.",
     constraints: [

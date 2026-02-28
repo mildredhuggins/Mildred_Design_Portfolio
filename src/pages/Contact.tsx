@@ -142,7 +142,7 @@ export function Contact() {
           <div>
             <h3 className="font-mono text-xs uppercase tracking-widest text-muted mb-4">Social Profiles</h3>
             <ul className="flex flex-col gap-3">
-              <li><a href="#" className="text-text hover:text-accent transition-colors font-medium">LinkedIn</a></li>
+              <li><a href="https://www.linkedin.com/in/mildred-c-huggins" target="_blank" rel="noopener noreferrer" className="text-text hover:text-accent transition-colors font-medium">LinkedIn</a></li>
               <li><a href="#" className="text-text hover:text-accent transition-colors font-medium">Twitter</a></li>
               <li><a href="#" className="text-text hover:text-accent transition-colors font-medium">Dribbble</a></li>
               <li><a href="#" className="text-text hover:text-accent transition-colors font-medium">GitHub</a></li>

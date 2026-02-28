@@ -27,7 +27,7 @@ export function Footer() {
           <div className="flex flex-col gap-4">
             <h3 className="font-mono text-xs uppercase tracking-widest text-muted">Socials</h3>
             <ul className="flex flex-col gap-3">
-              <li><a href="#" className="text-sm text-text hover:text-accent transition-colors">LinkedIn</a></li>
+              <li><a href="https://www.linkedin.com/in/mildred-c-huggins" target="_blank" rel="noopener noreferrer" className="text-sm text-text hover:text-accent transition-colors">LinkedIn</a></li>
               <li><a href="#" className="text-sm text-text hover:text-accent transition-colors">Twitter</a></li>
               <li><a href="#" className="text-sm text-text hover:text-accent transition-colors">Dribbble</a></li>
               <li><a href="#" className="text-sm text-text hover:text-accent transition-colors">GitHub</a></li>
@@ -46,7 +46,7 @@ export function Footer() {
 
         <div className="col-span-4 sm:col-span-8 lg:col-span-12 mt-16 pt-8 border-t border-border/50 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-xs text-muted font-mono">
-            &copy; {currentYear} Quiet Confidence. All rights reserved.
+            &copy; {currentYear} Millie Designs. All rights reserved.
           </p>
           <p className="text-xs text-muted font-mono">
             Designed with intention.
