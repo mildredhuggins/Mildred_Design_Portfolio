@@ -38,6 +38,7 @@ export function Footer() {
             <ul className="flex flex-col gap-3">
               <li><Link to="/" className="text-sm text-text hover:text-accent transition-colors">Home</Link></li>
               <li><Link to="/projects" className="text-sm text-text hover:text-accent transition-colors">Work</Link></li>
+              <li><Link to="/gallery" className="text-sm text-text hover:text-accent transition-colors">Gallery</Link></li>
               <li><Link to="/about" className="text-sm text-text hover:text-accent transition-colors">About</Link></li>
               <li><Link to="/resume" className="text-sm text-text hover:text-accent transition-colors">Resume</Link></li>
             </ul>

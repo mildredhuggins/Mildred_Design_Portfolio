@@ -35,7 +35,7 @@ export function Home() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-wrap gap-4 mt-4"
           >
-            <Button to="/projects" variant="primary">View Gallery</Button>
+            <Button to="/gallery" variant="primary">View Gallery</Button>
             <Button to="/resume" variant="secondary">Download Resume</Button>
           </motion.div>
         </div>
