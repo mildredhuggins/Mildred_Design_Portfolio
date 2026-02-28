@@ -21,7 +21,6 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
           src={project.thumbnail}
           alt={project.title}
           className="object-cover w-full h-full transition-transform duration-700 ease-out group-hover:scale-105"
-          referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/10" />
       </Link>

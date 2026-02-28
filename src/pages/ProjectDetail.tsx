@@ -79,7 +79,6 @@ export function ProjectDetail() {
             src={project.heroImage} 
             alt={`${project.title} hero`} 
             className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
           />
         </div>
       </motion.div>
@@ -135,7 +134,6 @@ export function ProjectDetail() {
                       src={artifact.url} 
                       alt={artifact.caption} 
                       className="w-full h-auto"
-                      referrerPolicy="no-referrer"
                     />
                   </div>
                   <figcaption className="text-sm text-muted text-center font-mono">{artifact.caption}</figcaption>

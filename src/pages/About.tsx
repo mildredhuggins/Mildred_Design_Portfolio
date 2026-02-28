@@ -99,7 +99,6 @@ export function About() {
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" 
                 alt="Portrait" 
                 className="w-full h-full object-cover grayscale opacity-80"
-                referrerPolicy="no-referrer"
               />
             </div>
 
