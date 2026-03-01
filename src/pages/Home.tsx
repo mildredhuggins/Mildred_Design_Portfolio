@@ -22,7 +22,7 @@ export function Home() {
             playsInline
             className="w-full h-full object-cover"
           >
-            <source src="https://uimu1t8pgavlwwu9.public.blob.vercel-storage.com/Hero%20Video/MillieatDesk%20%282%29.mp4" type="video/mp4" />
+            <source src="https://uimu1t8pgavlwwu9.public.blob.vercel-storage.com/Hero%20Video/MillieatDesk%20%283%29.mp4" type="video/mp4" />
           </video>
         </div>
         
