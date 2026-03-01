@@ -53,6 +53,42 @@ const resources = {
         "sitemap": "Sitemap",
         "rights": "All rights reserved.",
         "designed_with": "Designed with intention."
+      },
+      "bio": {
+        "title": "About Mildred",
+        "subtitle": "Graphic artist & acrylic painter — San Francisco Bay Area",
+        "tags": {
+          "graphic_design": "Graphic Design",
+          "acrylic_painting": "Acrylic Painting",
+          "typography": "Typography",
+          "color_systems": "Color Systems",
+          "bay_area": "Bay Area",
+          "maracaibo": "Maracaibo, Venezuela"
+        },
+        "p1": "Mildred Huggins is a San Francisco Bay Area graphic artist and acrylic painter whose work holds two things in rare balance: design systems that feel effortless, and paintings that move like memory. The Bay is an everyday muse — fog-soft gradients, the sharp geometry of bridges, the layered rhythm of its neighborhoods. But her palette and her eye also reach back to Maracaibo, Venezuela, where heat, music, family celebrations, and visual abundance continue to shape how she sees form and feeling.",
+        "p2_1": "Across both disciplines, Mildred builds with structure first — grids, tempo, repetition — then lets color do the storytelling. You can feel the optical cadence of ",
+        "p2_2": ", the wit and commanding presence of ",
+        "p2_3": "'s sculptural portraits, filtered through the fearless color of ",
+        "p2_4": ", the coastal luminosity of ",
+        "p2_5": ", and the compositional instinct of ",
+        "p2_6": ".",
+        "callout": "Studio rule: nothing is added unless it earns its place.",
+        "p3": "When she isn't painting or refining a typographic system, you'll find Mildred roaming museums, lingering at art festivals, or taking long walks outdoors — collecting shapes, shadows, and small human moments that later reappear as bold fields, quiet details, and work that is both unmistakably modern and deeply personal.",
+        "sidebar": {
+          "currently": "Currently",
+          "currently_val": "Based in the San Francisco Bay Area<br/>Available for commissions & collaborations",
+          "roots": "Roots",
+          "roots_val": "Maracaibo, Venezuela",
+          "influences": "Influences",
+          "practice": "Practice",
+          "practice_val": "Graphic design · Acrylic painting · Typography · Color systems"
+        },
+        "skills": {
+          "title": "Tools & Skills",
+          "adobe": "Adobe Creative Suite",
+          "productivity": "Productivity",
+          "emerging": "Emerging Practice"
+        }
       }
     }
   },
@@ -107,6 +143,42 @@ const resources = {
         "sitemap": "Mapa del sitio",
         "rights": "Todos los derechos reservados.",
         "designed_with": "Diseñado con intención."
+      },
+      "bio": {
+        "title": "Sobre Mildred",
+        "subtitle": "Artista gráfica y pintora acrílica — Área de la Bahía de San Francisco",
+        "tags": {
+          "graphic_design": "Diseño Gráfico",
+          "acrylic_painting": "Pintura Acrílica",
+          "typography": "Tipografía",
+          "color_systems": "Sistemas de Color",
+          "bay_area": "Área de la Bahía",
+          "maracaibo": "Maracaibo, Venezuela"
+        },
+        "p1": "Mildred Huggins es una artista gráfica y pintora acrílica del Área de la Bahía de San Francisco cuyo trabajo mantiene dos cosas en un raro equilibrio: sistemas de diseño que se sienten sin esfuerzo y pinturas que se mueven como la memoria. La Bahía es una musa cotidiana: degradados suaves como la niebla, la geometría afilada de los puentes, el ritmo en capas de sus vecindarios. Pero su paleta y su ojo también se remontan a Maracaibo, Venezuela, donde el calor, la música, las celebraciones familiares y la abundancia visual continúan dando forma a cómo ve la forma y el sentimiento.",
+        "p2_1": "En ambas disciplinas, Mildred construye primero con estructura (cuadrículas, tempo, repetición) y luego deja que el color cuente la historia. Puedes sentir la cadencia óptica de ",
+        "p2_2": ", el ingenio y la presencia imponente de los retratos escultóricos de ",
+        "p2_3": ", filtrados a través del color intrépido de ",
+        "p2_4": ", la luminosidad costera de ",
+        "p2_5": ", y el instinto compositivo de ",
+        "p2_6": ".",
+        "callout": "Regla del estudio: no se agrega nada a menos que se gane su lugar.",
+        "p3": "Cuando no está pintando o refinando un sistema tipográfico, encontrarás a Mildred recorriendo museos, demorándose en festivales de arte o dando largos paseos al aire libre, recolectando formas, sombras y pequeños momentos humanos que luego reaparecen como campos audaces, detalles tranquilos y un trabajo que es a la vez inconfundiblemente moderno y profundamente personal.",
+        "sidebar": {
+          "currently": "Actualmente",
+          "currently_val": "Con sede en el Área de la Bahía de San Francisco<br/>Disponible para encargos y colaboraciones",
+          "roots": "Raíces",
+          "roots_val": "Maracaibo, Venezuela",
+          "influences": "Influencias",
+          "practice": "Práctica",
+          "practice_val": "Diseño gráfico · Pintura acrílica · Tipografía · Sistemas de color"
+        },
+        "skills": {
+          "title": "Herramientas y Habilidades",
+          "adobe": "Adobe Creative Suite",
+          "productivity": "Productividad",
+          "emerging": "Práctica Emergente"
+        }
       }
     }
   }
