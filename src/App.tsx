@@ -4,6 +4,7 @@
  */
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import { Layout } from "./components/Layout";
 import { Home } from "./pages/Home";
 import { Gallery } from "./pages/Gallery";
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>
+      <Analytics />
     </BrowserRouter>
   );
 }
